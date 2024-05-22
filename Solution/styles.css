@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root{
+    --primary-one: hsl(257, 40%, 49%);
+    --primary-two: hsl(300, 69%, 71%);
+}
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 30px;
+    background: var(--primary-one) url('../images/bg-mobile.svg') top no-repeat;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    position: relative;
+    margin: 0 auto;
+    
+}
+
+#logo{
+    width: 150px;
+    animation: moveInLeft 1s backwards ease-in-out;
+}
+
+#illustration{
+    margin: 50px auto;
+    width: 330px;
+    animation: moveUp 1s backwards ease-in-out;
+}
+
+.main{
+    text-align: center;
+    color: #FFF;
+}
+
+.heading-text{
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 1.8em;
+}
+
+.heading-subtext{
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+
+.reg{
+    margin-top: 30px;
+    color: var(--primary-one);
+    padding: 13px 80px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    animation: btnReveal 1.5s ease-in-out backwards;
+}
+
+
+footer{
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: var(--primary-two);
+    margin-top: 20px;
+}
+
+footer a{
+    color: #FFF;
+}
+
+.pop-up{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--primary-two);
+    text-align: center;
+    color: #000;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+    z-index: 10;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+.overlay{
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(3px);
+}
+
+.hidden{
+    display: none;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    margin-top: 50px;
+    height: 55px;
+    animation: moveUp 1s backwards ease-in-out;
+}
+
+@keyframes moveUp {
+    0%{
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes moveInLeft {
+    0%{
+        transform: translateX(-80px);
+        opacity: 0;
+    }
+
+    80%{
+        transform: translateX(20px);
+        opacity: 0.8;
+    }
+
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes btnReveal {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 389px) {
+    #illustration{
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    body{
+        background: var(--primary-one) url('../images/bg-desktop.svg') no-repeat;
+        background-position: left;
+        padding: 50px;
+        overflow: hidden;
+    }
+
+
+    #illustration{
+        width: 600px;
+        margin: 0;
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .main{
+        text-align: left;
+        
+    
+    }
+
+    .heading-text{
+        font-size: 2.2em;
+    }
+
+    .heading-subtext{
+        font-size: large;
+    }
+
+    span{
+        display: inline-block;
+    }
+
+    .reg{
+        padding: 13px 60px;
+        transition: all 0.5s;
+    }
+
+    .reg:hover{
+        background-color: var(--primary-two);
+        color: #FFF;
+        cursor: pointer;
+    }
+
+    .socials{
+       display: flex;
+       justify-content: flex-end;
+    }
+
+    .socials img:hover{
+       cursor: pointer;
+       fill: var(--primary-two);
+    
+    }
+
+    .pop-up{
+        top: 50%;
+    }
+
+    
+}
